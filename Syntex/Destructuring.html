@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Destructing</title>
+  </head>
+
+  <body>
+    <script>
+      const point = [10, 25, -34];
+
+      const x = point[0];
+      const y = point[1];
+      const z = point[2];
+
+      console.log(x, y, z);
+
+      const gemstone = {
+        type: "quartz",
+        color: "rose",
+        carat: 21.29
+      };
+
+    //   const type = gemstone.type;
+    //   const color = gemstone.color;
+    //   const carat = gemstone.carat;
+
+      //console.log(type, color, carat);
+
+      // Destructuring system
+      const [i, j, k] = point;
+      console.log('Destructuring...'+ i, j, k);
+
+
+      const { type, color, carat } = gemstone;
+
+      console.log(type, color, carat);
+    </script>
+  </body>
+</html>

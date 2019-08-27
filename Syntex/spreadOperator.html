@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title></title>
+  </head>
+
+  <body>
+    <script>
+      const books = [
+        "Don Quixote",
+        "The Hobbit",
+        "Alice in Wonderland",
+        "Tale of Two Cities"
+      ];
+      console.log(...books);
+
+      const primes = new Set([2, 3, 5, 7, 11, 13, 17, 19, 23, 29]);
+      console.log(...primes);
+
+      //combining array with concat
+      const fruits = ["apples", "bananas", "pears"];
+      const vegetables = ["corn", "potatoes", "carrots"];
+      const produce = fruits.concat(vegetables);
+      console.log(produce);
+
+      /*
+       * Instructions: Use the spread operator to combine the `fruits` and `vegetables` arrays into the `produce` array.
+       * both of above work can be done using spread operator easily
+       *
+       */
+      const fruits1 = ["apples", "bananas", "pears"];
+      const vegetables1 = ["corn", "potatoes", "carrots"];
+
+      const produce1 = [...fruits1, ...vegetables1];
+
+      console.log(produce1);
+
+      /**
+       * REST Parameters
+       */
+      const order = [20.17, 18.67, 1.5, "cheese", "eggs", "milk", "bread"];
+      const [total, subtotal, tax, ...items] = order;
+      console.log(total, subtotal, tax, items);
+
+      printPackageItem("cheese", "egg", "milk");
+      function printPackageItem(...items) {
+        for (const item of items) {
+          console.log("passing REST parameter to For of...", item);
+        }
+      }
+
+      const nums = [1, 2, 3, 4, 5]
+      function sum(...nums) {
+        let total = 0;
+        for (const num of nums) {
+          total += num;
+        }
+        return total;
+      }
+      console.log('sum using rest param...', sum(...nums))
+    </script>
+  </body>
+</html>
