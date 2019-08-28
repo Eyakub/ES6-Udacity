@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Class Preview</title>
+</head>
+<body>
+    <script>
+        class Dessert{
+            constructor(calories){
+                this.calories = 250;
+            }
+        }    
+
+        class IceCream extends Dessert{
+            constructor(flavor, calories, toppings = []){
+                super(calories);
+                this.flavor = flavor;
+                this.toppings = toppings;
+            }
+
+            addTopping(toppings){
+                this.toppings.push(toppings);
+            }
+        }
+    </script>
+</body>
+</html>

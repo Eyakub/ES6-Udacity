@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>This with Regular Function</title>
+    </head>
+    <body>
+        <script>
+            // constructor
+            function IceCream() {
+                this.scoops = 0;
+            }
+
+            // adds scoop to ice cream
+            IceCream.prototype.addScoop = function() {
+                const cone = this; // sets `this` to the `cone` variable
+                setTimeout(function() {
+                    cone.scoops++; // references the `cone` variable
+                    console.log("scoop added!");
+                }, 0.5);
+            };
+
+            const dessert = new IceCream();
+            dessert.addScoop();
+
+            // constructor
+            // const Ice = () => this.cube = 0;
+            function Ice(){
+                this.cube = 0;
+            }
+
+            // adds scoop to the ice bar
+            Ice.prototype.addCube = () => {
+                setTimeout(() => {
+                    this.cube++;
+                    console.log('cube added!');
+                }, 0.5);
+            }
+
+            const dess = new Ice();
+            dess.addCube();
+        </script>
+    </body>
+</html>

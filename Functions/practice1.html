@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Arrow Function</title>
+    </head>
+    <body>
+        <script>
+            const names = ["eyakub", "sorkar", "software", "engineer"].map(
+                function(name) {
+                    console.log(name.toUpperCase());
+                }
+            );
+
+            const names_list = -["eyakub", "sorkar"].map(name =>
+                console.log(name.toUpperCase())
+            );
+
+            const longList = ["hahahahaha", "Eyakub", "onlysixdigit"];
+            const longNames = longList.filter(name =>
+                console.log(name.length > 6)
+            );
+
+            // with parameters
+            const greet = name => console.log(`Hello ${name}!`);
+            greet("Eyakub from greet variable function");
+
+            // empty parameters
+            const sayHi = () =>
+                console.log("hi there from sayHi with zero parameters");
+            sayHi();
+
+            // multiple parameters requires parentheses
+            const orderIceCream = (flavor, cone) =>
+                console.log(
+                    `Here's your ${flavor} ice cream in a ${cone} cone.`
+                );
+            orderIceCream("chocolate", "waffle");
+            
+            // If you need more than just a single line of code 
+            // in your arrow function's body, 
+            // then you can use the "block body syntax".
+            const upperizedNames = ["Farrin", "Kagure", "Asser"].map(name => {
+                name = name.toUpperCase();
+                return `${name} has ${name.length} characters in their name`;
+            });
+        </script>
+    </body>
+</html>

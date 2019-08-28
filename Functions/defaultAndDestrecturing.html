@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Default & Destructuring</title>
+    </head>
+    <body>
+        <script>
+            function createGrid([width = 5, height = 5]) {
+                return console.log(`Generates a ${width} x ${height} grid`);
+            }
+
+            createGrid([]); // Generates a 5 x 5 grid
+            createGrid([2]); // Generates a 2 x 5 grid
+            createGrid([2, 3]); // Generates a 2 x 3 grid
+            createGrid([undefined, 3]); // Generates a 5 x 3 grid
+
+            function buildHouse({
+                floors = 1,
+                color = "red",
+                walls = "brick"
+            } = {}) {
+                const floorText = floors === 1 ? "floor" : "floor(s)";
+                return `Your house has ${floors} ${floorText} with ${color} ${walls} walls`;
+            }
+
+            console.log(buildHouse());
+            console.log(buildHouse({}));
+            console.log(buildHouse({ floors: 3, color: "yellow" }));
+        </script>
+    </body>
+</html>
