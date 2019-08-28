@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Symbols</title>
+    </head>
+    <body>
+        <script>
+            // const bowl = {
+            //   'apple': { color: 'red', weight: 136.078 },
+            //   'banana': { color: 'yellow', weight: 183.151 },
+            //   'orange': { color: 'orange', weight: 170.097 },
+            //   'banana': { color: 'yellow', weight: 176.845 }
+            // };
+            // The bowl contains fruit which are objects that are properties of the bowl. 
+            // But, we run into a problem when the second banana gets added.
+            // console.log(bowl);
+            // Object {apple: Object, banana: Object, orange: Object}
+
+
+            // A symbol is a unique and immutable data type that is often used to identify object properties.
+            // To create a symbol, you write Symbol() with an optional string as its description.
+            // for multiple-same object it differ them 
+
+            const bowl = {
+              [Symbol('apple')]: { color: 'red', weight: 136.078 },
+              [Symbol('banana')]: { color: 'yellow', weight: 183.15 },
+              [Symbol('orange')]: { color: 'orange', weight: 170.097 },
+              [Symbol('banana')]: { color: 'yellow', weight: 176.845 }
+            };
+            console.log(bowl);
+        </script>
+    </body>
+</html>
