@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Iteration and Iterable</title>
+</head>
+<body>
+    <script>
+        /*An object becomes an iterator when it implements the .next() method.
+        The .next() method is a zero arguments function that returns an object with two properties:
+        
+        VALUE : the data representing the next value in the sequence of values within the object
+        
+        DONE : a boolean representing if the iterator is done going through the sequence of values
+        If done is true, then the iterator has reached the end of its sequence of values.
+        If done is false, then the iterator is able to produce another value in its sequence of values.
+        Here’s the example from earlier, but instead we are using the array’s default iterator to step through the each value in the array.
+        */
+
+        const digits = [0,1,2,3,4,5];
+        const arrayIterator = digits[Symbol.iterator]();
+
+        console.log(arrayIterator.next());
+        console.log(arrayIterator.next());
+        console.log(arrayIterator.next());
+        console.log(arrayIterator.next());
+        console.log(arrayIterator.next());
+        console.log(arrayIterator.next());
+        console.log(arrayIterator.next());
+    </script>
+</body>
+</html>
