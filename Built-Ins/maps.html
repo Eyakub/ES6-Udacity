@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Maps</title>
+    </head>
+    <body>
+        <script>
+            // maps are objects
+            // maps iterable
+            // weakmap is not iterable
+            const employees = new Map();
+            employees.set("eyakubsorkar@gmail.com", {
+                firstName: "eyakub",
+                lastName: "sorkar",
+                role: "Jr Software Engineer"
+            });
+            employees.set('sorkareyakub@gmail.com',{
+                firstName: 'sorkar',
+                lastName: 'eyakub',
+                role: 'Jr Software Engineer',
+            })
+
+            console.log(employees);
+
+            // using has()
+            console.log('using has ...', employees.has('sorkareyakub@gmail.com'))
+
+            // retrive a value by passing a key to maps
+            console.log('retriving a employee data: ', employees.get('eyakubsorkar@gmail.com'));
+
+            // .delete()
+            employees.delete('sorkareyakub@gmail.com');
+            console.log('after deleting a value...',employees);
+
+            // .clear() to remove all the key-value pairs from maps
+            employees.clear()
+            console.log('after using .clear()...', employees)
+
+            
+        </script>
+    </body>
+</html>

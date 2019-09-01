@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>WOrking with Sets</title>
+    </head>
+    <body>
+        <script>
+            const months = new Set([
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "August",
+                "September",
+                "October",
+                "November",
+                "December"
+            ]);
+            console.log(months.size);
+            console.log("January has...?", months.has("January"));
+            console.log("Retrieving All Values...", months.values());
+            console.log("keys...", months.keys());
+            const month = months.values();
+            console.log(month.next());
+            console.log(month.next());
+
+            const colors = new Set([
+                "red",
+                "orange",
+                "yellow",
+                "green",
+                "blue",
+                "violet",
+                "brown",
+                "black"
+            ]);
+            for (const color of colors) {
+                console.log(color);
+            }
+        </script>
+    </body>
+</html>
