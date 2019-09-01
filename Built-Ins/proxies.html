@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Proxies</title>
+    </head>
+    <body>
+        <script>
+            // proxy constructor takes two items:
+            // the object that it will be the proxy for
+            // an object containing the list of methods it will handle for the proxied object
+            // The second object is called the handler.
+
+            // var richard = {status: 'looking for work'};
+            // var agent = new Proxy(richard, {})
+            // agent.status;
+
+            const richard = { status: "looking for work" };
+            const handler = {
+                get(target, propName) {
+                    console.log(target); // the `richard` object, not `handler` and not `agent`
+                    console.log(propName); // the name of the property the proxy (`agent` in this case) is checking
+                }
+            };
+            const agent = new Proxy(richard, handler);
+            agent.status; // logs out the richard object (not the agent object!) and the name of the property being accessed (`status`)
+        </script>
+    </body>
+</html>
